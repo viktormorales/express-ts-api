@@ -11,7 +11,7 @@ const app = (0, express_1.default)();
 const port = process.env.SERVER_PORT; // default port to listen
 // define a route handler for the default home page
 app.get("/", (req, res) => {
-    res.send("Hello world!");
+    res.send("Primer API con ExpressJS y TypeScript");
 });
 // start the Express server
 app.listen(port, () => {
