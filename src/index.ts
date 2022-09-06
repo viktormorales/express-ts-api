@@ -1,16 +1,19 @@
-import dotenv from "dotenv";
-import express from "express";
-
-// initialize configuration
+import * as express from "express";
+// Initialize and configure dotenv
+import * as dotenv from "dotenv";
 dotenv.config();
 
-const app = express();
-const port = process.env.SERVER_PORT; // default port to listen
+// Import routes
+import homeRouter from "./routes/v1/home";
+import postsRouter from "./routes/v1/posts";
 
-// define a route handler for the default home page
-app.get( "/", ( req:any, res:any ) => {
-    res.send( "Primer API con ExpressJS y TypeScript" );
-} );
+// Initialize Express server
+const app = express();
+const port = process.env.SERVER_PORT;
+
+// Routes V1
+app.use("/v1", homeRouter);
+app.use("/v1/posts", postsRouter);
 
 // start the Express server
 app.listen( port, () => {
