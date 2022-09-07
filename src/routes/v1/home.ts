@@ -5,7 +5,7 @@ const homeRouter = express.Router();
 
 homeRouter.get("/", async (req, res) => {
     res.json({
-      msg: 'Home page.'
+      msg:"Show welcome message."
     });
 });
 

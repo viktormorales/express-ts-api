@@ -1,12 +1,12 @@
 import * as express from "express";
 
 // Set Router
-const homeRouter = express.Router();
+const postRouter = express.Router();
 
-homeRouter.get("/", async (req, res) => {
+postRouter.get("/", async (req, res) => {
     res.json({
-      msg: 'Hola'
+      msg: "Get all posts"
     });
 });
 
-export default homeRouter;
+export default postRouter;
